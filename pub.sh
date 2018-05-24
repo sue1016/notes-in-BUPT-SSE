@@ -1,4 +1,5 @@
 #! /bin/bash
+git push origin master
 gitbook build
 git branch -D gh-pages
 git checkout --orphan gh-pages
