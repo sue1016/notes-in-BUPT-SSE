@@ -2,7 +2,10 @@
 
 * [Introduction](README.md)
 * [Operating System](OS/README.md)
-    * [OS Lecture7 :Main Memory](OS/l7.md)
+    * [OS Lecture7 :Main Memory](OS/l7/README.md)
+        * [paging](OS/l7/l7_paging.md)
+        * [segmentation](OS/l7/l7_segmentation.md)
+        * [summary](OS/l7/l7_summary.md)
     * [OS Lecture8: Virtual Memory](OS/l8/README.md)
         * [background](OS/l8/l8_background.md)
         * [demand paging](OS/l8/l8_demandPaging.md)
