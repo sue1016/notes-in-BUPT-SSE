@@ -1,4 +1,5 @@
 #! /bin/bash
+gitbook install
 git push origin master
 gitbook build
 git branch -D gh-pages
