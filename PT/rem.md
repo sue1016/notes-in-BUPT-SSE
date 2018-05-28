@@ -1,8 +1,8 @@
 # 需要背的东西
-<img src =  "https://s26.postimg.cc/hjzn7jdyx/2018-05-28_9.30.24.png">
+<img src = "https://s26.postimg.cc/hjzn7jdyx/2018-05-28_9.30.24.png">
 <img src = "https://s26.postimg.cc/7zg0kmm21/2018-05-28_9.37.31.png">
-<img src ="https://s26.postimg.cc/dnmbbiy49/2018-05-28_9.37.38.png">
-<img src ="https://s26.postimg.cc/m5vrfwmnd/2018-05-28_9.38.01.png">
+<img src = "https://s26.postimg.cc/dnmbbiy49/2018-05-28_9.37.38.png">
+<img src = "https://s26.postimg.cc/m5vrfwmnd/2018-05-28_9.38.01.png">
 <img src = "https://s26.postimg.cc/432ooobd5/2018-05-28_9.38.38.png">
 <img src = "https://s26.postimg.cc/4slh11jmh/2018-05-28_9.38.44.png">
 <img src = "https://s26.postimg.cc/55cv77eqx/2018-05-28_9.39.25.png">
