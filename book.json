@@ -1,8 +1,14 @@
 {
+   "title":"notes of Sue",
+   "author":"Cara Sue",
    "plugins":[
-	      "expandable-chapters",
+              "expandable-chapters",
               "book-summary-scroll-position-saver"
-   ]
+   ],
+   "styles": {
+        "website":"styles/website.css"
+   }
+
 
 
 
