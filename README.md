@@ -11,4 +11,9 @@
 
 
 
+[大二上资料包][1]  
+[大二下资料包][2]  
 
+
+[1]:https://pan.baidu.com/s/1iBx4lfGpp5AOhCjj_at2lg
+[2]:https://pan.baidu.com/s/1LPCmFXD-K4htHwCE1wOwxQ
