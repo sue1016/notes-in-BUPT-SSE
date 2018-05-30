@@ -12,6 +12,7 @@
         * [Page replacement](OS/l8/l8_pageReplacement.md)
         * [Allocation of Frames](OS/l8/l8_allocationOfFrames.md)
         * [Thrashing](OS/l8/l8_thrashing.md)
+    * [OS Lecture 9: File-System Interface](OS/l9/README.md)      
 * [Database](DB/README.md)
     * [DB Chapter 7:DB Planning,Design and Administration](DB/c7.md)
     * [DB Chapter 8:ER model](DB/c8.md)
