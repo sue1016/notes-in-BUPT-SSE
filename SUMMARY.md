@@ -23,7 +23,7 @@
         * [DB Chapter 10:Transaction Management](DB/c10/README.md)
             * [事务transaction](DB/c10/c10_1.md)
             * [并发控制 concurrency control](DB/c10/c10_2.md)
-            * [数据库的恢复](DB/C10/C10_3.md)
+            * [数据库的恢复](DB/c10/c10_3.md)
     * [Probability theory](PT/README.md)
         * [Chapter 1](PT/1.md)
             * [1_1-1_2  概率论的基本概念](PT/1_1-1_2.md)
