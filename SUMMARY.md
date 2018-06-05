@@ -14,7 +14,7 @@
             * [Allocation of Frames](OS/l8/l8_allocationOfFrames.md)
             * [Thrashing](OS/l8/l8_thrashing.md)
         * [OS Lecture 9: File-System Interface](OS/l9/l9.md)  
-        * [OS Lecture 10: File  system implementation
+        * [OS Lecture 10: File  system implementation](OS/l10/l10.md)
 ](OS/l10/l10.md)  
     * [Database](DB/README.md)
         * [DB Chapter 7:DB Planning,Design and Administration](DB/c7.md)
@@ -23,6 +23,7 @@
         * [DB Chapter 10:Transaction Management](DB/c10/README.md)
             * [事务transaction](DB/c10/c10_1.md)
             * [并发控制 concurrency control](DB/c10/c10_2.md)
+            * [数据库的恢复](DB/C10/C10_3.md)
     * [Probability theory](PT/README.md)
         * [Chapter 1](PT/1.md)
             * [1_1-1_2  概率论的基本概念](PT/1_1-1_2.md)
