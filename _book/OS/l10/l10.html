@@ -1,0 +1,1112 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>OS Lecture 10: File  system implementation](OS/l10/l10.md)
+ · notes of Sue</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Cara Sue">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../DB/" />
+    
+    
+    <link rel="prev" href="../l9/l9.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../README2.html">
+            
+                <a href="../../README2.html">
+            
+                    
+                    大二下
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Operating System
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../l7/">
+            
+                <a href="../l7/">
+            
+                    
+                    OS Lecture7 :Main Memory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="../l7/l7_paging.html">
+            
+                <a href="../l7/l7_paging.html">
+            
+                    
+                    paging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="../l7/l7_segmentation.html">
+            
+                <a href="../l7/l7_segmentation.html">
+            
+                    
+                    segmentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.3" data-path="../l7/l7_summary.html">
+            
+                <a href="../l7/l7_summary.html">
+            
+                    
+                    summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../l8/">
+            
+                <a href="../l8/">
+            
+                    
+                    OS Lecture8: Virtual Memory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="../l8/l8_background.html">
+            
+                <a href="../l8/l8_background.html">
+            
+                    
+                    background
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.2" data-path="../l8/l8_demandPaging.html">
+            
+                <a href="../l8/l8_demandPaging.html">
+            
+                    
+                    demand paging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.3" data-path="../l8/l8_pageReplacement.html">
+            
+                <a href="../l8/l8_pageReplacement.html">
+            
+                    
+                    Page replacement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.4" data-path="../l8/l8_allocationOfFrames.html">
+            
+                <a href="../l8/l8_allocationOfFrames.html">
+            
+                    
+                    Allocation of Frames
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2.5" data-path="../l8/l8_thrashing.html">
+            
+                <a href="../l8/l8_thrashing.html">
+            
+                    
+                    Thrashing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../l9/l9.html">
+            
+                <a href="../l9/l9.html">
+            
+                    
+                    OS Lecture 9: File-System Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.4" data-path="l10.html">
+            
+                <a href="l10.html">
+            
+                    
+                    OS Lecture 10: File  system implementation](OS/l10/l10.md)
+
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../DB/">
+            
+                <a href="../../DB/">
+            
+                    
+                    Database
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../DB/c7.html">
+            
+                <a href="../../DB/c7.html">
+            
+                    
+                    DB Chapter 7:DB Planning,Design and Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../DB/c8.html">
+            
+                <a href="../../DB/c8.html">
+            
+                    
+                    DB Chapter 8:ER model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../DB/c9.html">
+            
+                <a href="../../DB/c9.html">
+            
+                    
+                    DB Chapter 9:Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../DB/c10/">
+            
+                <a href="../../DB/c10/">
+            
+                    
+                    DB Chapter 10:Transaction Management
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.4.1" data-path="../../DB/c10/c10_1.html">
+            
+                <a href="../../DB/c10/c10_1.html">
+            
+                    
+                    事务transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4.2" data-path="../../DB/c10/c10_2.html">
+            
+                <a href="../../DB/c10/c10_2.html">
+            
+                    
+                    并发控制 concurrency control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4.3" data-path="../../DB/c10/c10_3.html">
+            
+                <a href="../../DB/c10/c10_3.html">
+            
+                    
+                    数据库的恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../PT/">
+            
+                <a href="../../PT/">
+            
+                    
+                    Probability theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../PT/1.html">
+            
+                <a href="../../PT/1.html">
+            
+                    
+                    Chapter 1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="../../PT/1_1-1_2.html">
+            
+                <a href="../../PT/1_1-1_2.html">
+            
+                    
+                    1_1-1_2  概率论的基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="../../PT/1_3-1_4.html">
+            
+                <a href="../../PT/1_3-1_4.html">
+            
+                    
+                    1_3-1_4  概率及其性质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="../../PT/1_5.html">
+            
+                <a href="../../PT/1_5.html">
+            
+                    
+                    1_5  条件概率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.4" data-path="../../PT/1_6.html">
+            
+                <a href="../../PT/1_6.html">
+            
+                    
+                    1_6  事件的独立性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../PT/2.html">
+            
+                <a href="../../PT/2.html">
+            
+                    
+                    Chapter 2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="../../PT/2_1.html">
+            
+                <a href="../../PT/2_1.html">
+            
+                    
+                    2_1  随机变量及其分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.2" data-path="../../PT/2_2.html">
+            
+                <a href="../../PT/2_2.html">
+            
+                    
+                    2_2  离散型随机变量及其分布律
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.3" data-path="../../PT/2_3.html">
+            
+                <a href="../../PT/2_3.html">
+            
+                    
+                    2_3  连续型随机变量及其概率密度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.4" data-path="../../PT/2_4.html">
+            
+                <a href="../../PT/2_4.html">
+            
+                    
+                    2_4  随机变量的函数的分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../PT/3.html">
+            
+                <a href="../../PT/3.html">
+            
+                    
+                    Chapter 3
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.3.1" data-path="../../PT/3_1.html">
+            
+                <a href="../../PT/3_1.html">
+            
+                    
+                    3_1  多维随机变量及其分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3.2" data-path="../../PT/3_2.html">
+            
+                <a href="../../PT/3_2.html">
+            
+                    
+                    3_2  边缘分布与随机变量的独立性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3.3" data-path="../../PT/3_3.html">
+            
+                <a href="../../PT/3_3.html">
+            
+                    
+                    3_3  条件分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3.4" data-path="../../PT/3_4.html">
+            
+                <a href="../../PT/3_4.html">
+            
+                    
+                    3_4  两个随机变量函数的分布
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../../PT/4.html">
+            
+                <a href="../../PT/4.html">
+            
+                    
+                    Chapter 4
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.4.1" data-path="../../PT/4_1.html">
+            
+                <a href="../../PT/4_1.html">
+            
+                    
+                    4_1  随机变量的数字特征
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.2" data-path="../../PT/4_2.html">
+            
+                <a href="../../PT/4_2.html">
+            
+                    
+                    4_2  方差
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4.3" data-path="../../PT/4_3.html">
+            
+                <a href="../../PT/4_3.html">
+            
+                    
+                    4_3  协方差与相关系数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../../PT/12.html">
+            
+                <a href="../../PT/12.html">
+            
+                    
+                    Chatper 12
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.5.1" data-path="../../PT/12_1.html">
+            
+                <a href="../../PT/12_1.html">
+            
+                    
+                    12_1  随机过程及其统计描述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5.2" data-path="../../PT/12_2.html">
+            
+                <a href="../../PT/12_2.html">
+            
+                    
+                    12_2  随机过程的统计描述——概率分布和数字特征
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5.3" data-path="../../PT/12_3.html">
+            
+                <a href="../../PT/12_3.html">
+            
+                    
+                    12_3  泊松过程及维纳过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="../../PT/13.html">
+            
+                <a href="../../PT/13.html">
+            
+                    
+                    Chapter 13
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.6.1" data-path="../../PT/13_1.html">
+            
+                <a href="../../PT/13_1.html">
+            
+                    
+                    13_1  马尔可夫链
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7" data-path="../../PT/l14.html">
+            
+                <a href="../../PT/l14.html">
+            
+                    
+                    Chapter 14
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.7.1" data-path="../../PT/14_1-14_3.html">
+            
+                <a href="../../PT/14_1-14_3.html">
+            
+                    
+                    平稳随机过程的概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.7.2" data-path="../../PT/14_4.html">
+            
+                <a href="../../PT/14_4.html">
+            
+                    
+                    平稳随机过程的功率谱密度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.8" data-path="../../PT/rem.html">
+            
+                <a href="../../PT/rem.html">
+            
+                    
+                    需要背的东西
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >OS Lecture 10: File  system implementation](OS/l10/l10.md)
+</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="lecture-10----file--system-implementation">Lecture 10  :  File  system implementation</h1>
+<hr>
+<h2 id="file-structure">File-Structure</h2>
+<p>on secondary storage(disk)<br>layers<br>file control block</p>
+<h3 id="layered-file-system">layered file system</h3>
+<p>application  programs<br>|<br>logical file system<br>|<br>file-organization module<br>|<br>basic file system<br>|<br>i/o control<br>|<br>devices     </p>
+<h2 id="file-system-implementation">file-system implementation</h2>
+<h3 id="on-disk-structures">On-disk structures</h3>
+<ul>
+<li>boot control block   </li>
+<li>volume control block   </li>
+<li>directory structure   </li>
+<li>Per-file FCB  </li>
+</ul>
+<h2 id="directory-implematation">Directory implematation</h2>
+<ul>
+<li>&#x7EBF;&#x6027;&#x5217;&#x8868;&#x5B9E;&#x73B0;  </li>
+<li><p>&#x54C8;&#x5E0C;&#x8868;&#x5B9E;&#x73B0;     </p>
+<pre><code> &#x65F6;&#x95F4;&#x4E0A;&#x63D0;&#x9AD8;&#x4E86;&#x6027;&#x80FD;&#xFF0C;&#x6548;&#x7387;&#x9AD8;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x51FA;&#x73B0;&#x51B2;&#x7A81;&#xFF0C;&#x9700;&#x8981;&#x89E3;&#x51B3;     
+</code></pre><p><font color="red">&#x8FD9;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;&#x8BB2;&#x7684;&#x5DE8;&#x5FEB;</font></p>
+<h2 id="allocation-methods">Allocation methods</h2>
+</li>
+</ul>
+<h3 id="&#x8FDE;&#x7EED;&#x5206;&#x914D;">&#x8FDE;&#x7EED;&#x5206;&#x914D;</h3>
+<p>&#x5757;&#x7684;&#x8D77;&#x59CB;&#x5730;&#x5740;,&#x5757;&#x7684;&#x957F;&#x5EA6;<br>LogicalAddress/512 = Q. . . . . . R<br>Block  to  be  accessed  =  Q  +  starting  address  Displacement  into  block  =  R<br><img src="https://s26.postimg.cc/9z7n9atjt/2018-06-01_10.58.57.png">
+&#x4F18;&#x70B9;:  </p>
+<ul>
+<li>&#x652F;&#x6301;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#xFF0C;&#x987A;&#x5E8F;&#x8BBF;&#x95EE;  </li>
+<li>&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#x5FEB;  </li>
+</ul>
+<p>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5916;&#x90E8;&#x788E;&#x7247;&#xFF0C;&#x6D6A;&#x8D39;&#x7A7A;&#x95F4;</li>
+<li>Files cannot grow ==&#x89E3;&#x51B3;&#x65B9;&#x5F0F;=&gt; Extent-Based  Systems&#xFF08;use a modified contiguous allocation  scheme&#xFF09;  </li>
+</ul>
+<h3 id="&#x94FE;&#x63A5;&#x5206;&#x914D;">&#x94FE;&#x63A5;&#x5206;&#x914D;</h3>
+<ul>
+<li><p>implicit  </p>
+<pre><code>     &#x76EE;&#x5F55;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x7B2C;&#x4E00;&#x4E2A;&#x548C;&#xFF08;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5757;&#xFF09;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x7684;&#x6307;&#x9488;  
+     &#x6BCF;&#x4E2A;&#x5757;&#x5305;&#x542B;&#x4E86;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x5757;&#x7684;&#x6307;&#x9488;  
+     &#x4F18;&#x70B9;&#xFF1A;&#x79BB;&#x6563;&#x5206;&#x5E03;&#xFF0C;&#x4E0D;&#x4F1A;&#x6D6A;&#x8D39;&#x7A7A;&#x95F4; 
+     &#x7F3A;&#x70B9;&#xFF1A;1.&#x4E0D;&#x80FD;&#x968F;&#x673A;&#x8BBF;&#x95EE;&#xFF0C;&#x5FC5;&#x987B;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x5F00;&#x59CB;&#x627E;&#xFF0C;&#x8BBF;&#x95EE;&#x6548;&#x7387;&#x4F4E;  
+          2.&#x94FE;&#x63A5;&#x6307;&#x9488;&#x5360;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;     
+</code></pre><p><img src="https://s26.postimg.cc/chtc9u2dl/2018-06-01_11.18.17.png">  </p>
+</li>
+<li><p>explicit  </p>
+<pre><code>    &#x5185;&#x5B58;&#x4E0A;&#x5B58;&#x4E00;&#x4E2A;File Allocation table, FAT&#xFF0C;&#x53EA;&#x5B58;&#x6307;&#x9488;&#xFF0C;&#x4E0D;&#x5B58;&#x6570;&#x636E;  
+    &#x6BCF;&#x4E2A;&#x5757;&#x90FD;&#x6709;&#x4E00;&#x4E2A;entry  
+    &#x4F18;&#x70B9;&#xFF1A;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;support random access,&#x4ECD;&#x7136;&#x6548;&#x7387;&#x4E0D;&#x592A;&#x9AD8;    
+    &#x7F3A;&#x70B9;&#xFF1A;result in a significant disk head seeks  ==solution=&gt;  cached FAT   
+</code></pre><p><img src="https://s26.postimg.cc/rdrvhlt9l/2018-06-01_11.29.10.png">  </p>
+</li>
+</ul>
+<h3 id="&#x7D22;&#x5F15;&#x5206;&#x914D;">&#x7D22;&#x5F15;&#x5206;&#x914D;</h3>
+<p>&#x628A;&#x6240;&#x6709;&#x7684;&#x6307;&#x9488;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x5757;&#x91CC;&#xFF0C;&#x7D22;&#x5F15;&#x5757;<br>&#x800C;&#x4E0D;&#x662F;&#x6BCF;&#x4E00;&#x4E2A;
+&#x4F18;&#x70B9;:&#x652F;&#x6301;&#x968F;&#x673A;&#x8BBF;&#x95EE;<br>    &#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x968F;&#x673A;&#x788E;&#x7247;<br>&#x7F3A;&#x70B9;&#xFF1A;&#x8FC7;&#x5EA6;&#x4F9D;&#x8D56;&#x7D22;&#x5F15;&#x5757;&#xFF0C;&#x5757;&#x7684;&#x5927;&#x5C0F;&#x6709;&#x9650;&#xFF0C;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#x5C31;&#x4F9D;&#x8D56;&#x4E8E;&#x7D22;&#x5F15;&#x5757;&#x7684;&#x5927;&#x5C0F;  =solution=&gt; &#x591A;&#x7EA7;&#x7D22;&#x5F15;  </p>
+<p><img src="https://s26.postimg.cc/3mshzjqih/2018-06-01_11.34.22.png"></p>
+<h3 id="&#x7EC4;&#x5408;&#x5206;&#x914D;">&#x7EC4;&#x5408;&#x5206;&#x914D;</h3>
+<blockquote>
+<p>&#x7ED9;&#x51FA;&#x6587;&#x4EF6;b&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x600E;&#x6837;&#x624D;&#x80FD;&#x627E;&#x5230;&#x5B83;&#x7684;FCB?  </p>
+<blockquote>
+<p>&#x8981;&#x5148;&#x627E;b&#x7684;&#x6839;&#x76EE;&#x5F55;  </p>
+<blockquote>
+<p>&#x6839;&#x636E;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x6BD4;&#x5982;&#x662F;&#x7D22;&#x5F15;&#x65B9;&#x5F0F;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x5B50;&#x76EE;&#x5F55;&#x7684;&#x5757;&#x53F7;&#xFF0C;&#x627E;&#x5230;&#x5B50;&#x76EE;&#x5F55;&#x7684;fcb&#xFF0C;&#x7C7B;&#x4F3C;&#x4F9D;&#x6B21;&#x627E;&#x4E0B;&#x53BB;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x76EE;&#x6807;&#x76EE;&#x5F55;&#x9879;&#xFF0C;&#x627E;&#x5230;b&#x7684;fcb  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><img src="https://s26.postimg.cc/8zhcdom4p/QQ20180601-0.jpg"></p>
+<font color="red">&#x4EE5;&#x4E0A;&#x7684;&#x8981;&#x4F1A;&#x753B;&#xFF0C;&#x7406;&#x89E3;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x7B97;</font>
+
+<h2 id="free-space-management">Free-Space management</h2>
+<p>algorithm:</p>
+<ul>
+<li>bit vector  </li>
+<li>linked list </li>
+<li>counting  </li>
+</ul>
+<h3 id="bit-vector">bit vector</h3>
+<p>0 - allocated<br>1 - free<br>bitmap length  </p>
+<blockquote>
+<p>how to find the &#x7B2C;&#x4E00;&#x4E2A;&#x7A7A;&#x95F2;&#x5757;&#xFF1F; </p>
+</blockquote>
+<p>&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x975E;0&#x7684;&#x5B57;&#xFF08;&#x5047;&#x8BBE;&#x662F;16&#x4F4D;&#xFF09;<br>&#x5728;&#x8FD9;&#x4E2A;&#x975E;0&#x7684;&#x5B57;&#x91CC;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;1bit&#x7684;<br>&#x770B;&#x770B;&#x591F;&#x4E0D;&#x591F;&#xFF0C;&#x7136;&#x540E;&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x8D70;  </p>
+<p>If first K words is 0, &amp; (K + 1)th word &gt; 0,<br>the first (K + 1)th word&apos;s first 1 bit has offset L,<br>first  free  block  number  N = K &#xD7; 16 + L  </p>
+<p>But copy in memory and disk may differ<br>Cannot get contiguous space easily    </p>
+<h1 id="linked-list">linked list</h1>
+<p> linked list  </p>
+<p>Link together al  l the free disk blocks
+First free b    lock</p>
+<p>Cannot get contiguous space easily<br>No waste of space     </p>
+<h3 id="counting">counting</h3>
+<p>&#x4E00;&#x4E2A;table&#x91CC;&#x6709;&#x8BB8;&#x591A;  &#x8D77;&#x59CB;</p>
+<p>Each = first free block number &amp; a counter  (number of free blocks)  </p>
+<h2 id="each--first-free-block-number--a-counter--number-of-free-blocks">Each = first free block number &amp; a counter  (number of free blocks)</h2>
+<p>Shorter than linked list </p>
+<h2 id="efficiency-&#xFF08;&#x7A7A;&#x95F4;&#xFF09;-and-performance&#xFF08;&#x65F6;&#x95F4;&#xFF09;">Efficiency &#xFF08;&#x7A7A;&#x95F4;&#xFF09; and Performance&#xFF08;&#x65F6;&#x95F4;&#xFF09;</h2>
+<font color="green">&#x5C31;&#x8BFB;&#x4E86;&#x4E00;&#x4E0B;ppt</font>    
+
+
+<h2 id="recovery">recovery</h2>
+<font color="green">&#x4E5F;&#x6CA1;&#x600E;&#x4E48;&#x8BB2;</font>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../l9/l9.html" class="navigation navigation-prev " aria-label="Previous page: OS Lecture 9: File-System Interface">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../DB/" class="navigation navigation-next " aria-label="Next page: Database">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"OS Lecture 10: File  system implementation](OS/l10/l10.md)\n","level":"1.2.1.4","depth":3,"next":{"title":"Database","level":"1.2.2","depth":2,"path":"DB/README.md","ref":"DB/README.md","articles":[{"title":"DB Chapter 7:DB Planning,Design and Administration","level":"1.2.2.1","depth":3,"path":"DB/c7.md","ref":"DB/c7.md","articles":[]},{"title":"DB Chapter 8:ER model","level":"1.2.2.2","depth":3,"path":"DB/c8.md","ref":"DB/c8.md","articles":[]},{"title":"DB Chapter 9:Normalization","level":"1.2.2.3","depth":3,"path":"DB/c9.md","ref":"DB/c9.md","articles":[]},{"title":"DB Chapter 10:Transaction Management","level":"1.2.2.4","depth":3,"path":"DB/c10/README.md","ref":"DB/c10/README.md","articles":[{"title":"事务transaction","level":"1.2.2.4.1","depth":4,"path":"DB/c10/c10_1.md","ref":"DB/c10/c10_1.md","articles":[]},{"title":"并发控制 concurrency control","level":"1.2.2.4.2","depth":4,"path":"DB/c10/c10_2.md","ref":"DB/c10/c10_2.md","articles":[]},{"title":"数据库的恢复","level":"1.2.2.4.3","depth":4,"path":"DB/c10/c10_3.md","ref":"DB/c10/c10_3.md","articles":[]}]}]},"previous":{"title":"OS Lecture 9: File-System Interface","level":"1.2.1.3","depth":3,"path":"OS/l9/l9.md","ref":"OS/l9/l9.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","book-summary-scroll-position-saver"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"expandable-chapters":{},"book-summary-scroll-position-saver":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Cara Sue","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"notes of Sue","gitbook":"*"},"file":{"path":"OS/l10/l10.md","mtime":"2018-06-06T02:43:14.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-12T00:20:37.977Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
